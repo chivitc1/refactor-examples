@@ -1,0 +1,9 @@
+{
+  "name": "refactor-examples",
+  "version": "1.0.0",
+  "description": "learn refactoring",
+  "main": "index.js",
+  "repository": "https://github.com/chivitc1/refactor-examples.git",
+  "author": "chinv",
+  "license": "MIT"
+}
