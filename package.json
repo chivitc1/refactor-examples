@@ -4,14 +4,10 @@
   "description": "learn refactoring",
   "main": "index.js",
   "scripts": {
-    "test": "mocha 'src/**/*.test.js'",
     "start": "node src/main.js"
   },
   "repository": "https://github.com/chivitc1/refactor-examples.git",
   "author": "chinv",
   "license": "MIT",
-  "devDependencies": {
-    "chai": "^4.2.0",
-    "mocha": "^6.1.4"
-  }
+  "devDependencies": {}
 }
