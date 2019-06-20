@@ -11,10 +11,8 @@ function statement(invoice, plays) {
         totalAmount += amountFor(perf);
     }
 
-    let volumeCredits = totalVolumeCreditsFor();
-
     result += `\n- Amount owed is ${format(totalAmount/100)}`;
-    result += `\n- You earned ${volumeCredits} credits\n`;
+    result += `\n- You earned ${totalVolumeCreditsFor()} credits\n`;
     return result;
 
     function totalVolumeCreditsFor() {

@@ -20,4 +20,6 @@ const play = plays[perf.playID];
 - extract func calculate volumeCredits base on performance's audience and play type: volumeCreditsFor()
 - rename perf param -> aPerformance
 - extract func sum of volumeCredits: totalVolumeCreditsFor()
+- remove temp var volumeCredits, use inline func totalVolumeCreditsFor()
+
 
