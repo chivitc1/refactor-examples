@@ -6,15 +6,15 @@ function statement(invoice, plays) {
     for (let perf of invoice.performances) {
 
         // print line for this order
-        result += `\n---- ${playFor(perf).name}: ${format(amountFor(perf)/100)} (${perf.audience})`;
+        result += `\n---- ${playFor(perf).name}: ${usd(amountFor(perf)/100)} (${perf.audience})`;
         totalAmount += amountFor(perf);
     }
 
-    result += `\n- Amount owed is ${format(totalAmount/100)}`;
+    result += `\n- Amount owed is ${usd(totalAmount/100)}`;
     result += `\n- You earned ${totalVolumeCreditsFor()} credits\n`;
     return result;
 
-    function format(aNumber) {
+    function usd(aNumber) {
         return new Intl.NumberFormat("en-US",
         { style: "currency", currency: "USD", minimumFractionDigits: 2 }).format(aNumber);
     }
