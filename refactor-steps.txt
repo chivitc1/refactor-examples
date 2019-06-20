@@ -14,3 +14,6 @@ const play = plays[perf.playID];
 - remove temp var, use inline func call playFor()
 - remove redundant func param of amountFor: remove play param
 - remove temp var thisAmount, use inline func call amountFor()
+
+3. extract volumeCredits calculation function
+- split loop calculation for volumeCredits, slide variable volumeCredits
