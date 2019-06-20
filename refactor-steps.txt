@@ -9,3 +9,5 @@ const play = plays[perf.playID];
 => play is a temp var in a loop 
 => play usage repeated a lot
 => replace temp var with query playFor(aPerformance)
+
+- rename param perf -> aPerformance
