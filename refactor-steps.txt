@@ -13,3 +13,4 @@ const play = plays[perf.playID];
 - rename param perf -> aPerformance
 - remove temp var, use inline func call playFor()
 - remove redundant func param of amountFor: remove play param
+- remove temp var thisAmount, use inline func call amountFor()
