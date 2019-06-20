@@ -54,3 +54,12 @@ const play = plays[perf.playID];
 8. Separate files: createStatementData.js
 
 9. Implement req1: statement in HTML
+
+--------------req2: support more play types------
+THINKING:
+- When adding play types, we may have to modify two funcs: amountFor() and volumeCreditsFor()
+- Can we aggregate them to a place for easier to make change?
+- Play types make Performance a bit different -> can we abstract the difference with class polymorphism?
+
+10. Replace conditional with polymor:
+- move amountFor() calc to class PerformanceCalculator
