@@ -1,5 +1,5 @@
 var expect = require('chai').expect;
-var statement = require('./statement');
+var { statement } = require('./statement');
 
 let invoice = {
   "customer": "BigCo",
