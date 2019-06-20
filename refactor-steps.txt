@@ -25,3 +25,5 @@ const play = plays[perf.playID];
 4. Remove temp variable - format
 - extract func format creation to func format(aNumber)
 - rename func format -> usd, a better name
+- move duplication money conversion divide by 100 to usb() func
+
