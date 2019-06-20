@@ -46,3 +46,4 @@ const play = plays[perf.playID];
 - split phase: move amountFor func
 - split phase: move volumeCreditsFor func
 - split phase: move totalAmount
+- split phase: move totalVolumeCreditsFor
