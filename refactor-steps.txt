@@ -42,3 +42,4 @@ const play = plays[perf.playID];
 - extract func renderPlainText() from statement()
 - Split phase: passing intermediate data
 - Split phase: remove invoice param
+- split phase: move playFor func
