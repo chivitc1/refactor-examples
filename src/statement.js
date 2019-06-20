@@ -1,11 +1,15 @@
 
 function statement(invoice, plays) {
+    let statementData = createStatementData(invoice, plays);
+    return renderPlainText(statementData, plays);
+}
+function createStatementData(invoice, plays) {
     let statementData = {};
     statementData.customer = invoice.customer;
     statementData.performances = invoice.performances.map(copy);
     statementData.totalAmount = totalAmount(statementData);
     statementData.totalVolumeCredits = totalVolumeCredits(statementData);
-    return renderPlainText(statementData, plays);
+    return statementData;
 
     function copy(aPerformance) {
         const result = Object.assign({}, aPerformance);

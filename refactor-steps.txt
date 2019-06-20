@@ -48,3 +48,4 @@ const play = plays[perf.playID];
 - split phase: move totalAmount
 - split phase: move totalVolumeCreditsFor
 - split phase: use map-reduce to calc instead of loop
+- Finish split phase: split createStatementData, renderPlainText
