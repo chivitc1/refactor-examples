@@ -17,3 +17,4 @@ const play = plays[perf.playID];
 
 3. extract volumeCredits calculation function
 - split loop calculation for volumeCredits, slide variable volumeCredits
+- extract func calculate volumeCredits base on performance's audience and play type
