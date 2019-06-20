@@ -1,3 +1,4 @@
 1. Switch stm is complex
 - calculating the charge for one performance => extract function amountFor
 - rename thisAmount variable
+- rename perf param
