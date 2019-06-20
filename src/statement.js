@@ -3,6 +3,7 @@ function statement(invoice, plays) {
     let statementData = {};
     statementData.customer = invoice.customer;
     statementData.performances = invoice.performances.map(copy);
+    statementData.totalAmount = totalAmount(statementData);
     return renderPlainText(statementData, plays);
 
     function copy(aPerformance) {
@@ -46,6 +47,14 @@ function statement(invoice, plays) {
             result += Math.floor(aPerformance.audience / 10);
         return result
     }
+
+    function totalAmount() {
+        let result = 0;
+        for (let perf of statementData.performances) {
+            result += perf.amount;
+        }
+        return result;
+    }
 }
 
 function renderPlainText(data, plays) {
@@ -53,17 +62,9 @@ function renderPlainText(data, plays) {
     for (let perf of data.performances) {
         result += `\n---- ${perf.play.name}: ${usd(perf.amount)} (${perf.audience})`;
     }
-    result += `\n- Amount owed is ${usd(totalAmount())}`;
+    result += `\n- Amount owed is ${usd(data.totalAmount)}`;
     result += `\n- You earned ${totalVolumeCredits()} credits\n`;
     return result;
-
-    function totalAmount() {
-        let result = 0;
-        for (let perf of data.performances) {
-            result += perf.amount;
-        }
-        return result;
-    }
 
     function usd(aNumber) {
         return new Intl.NumberFormat("en-US",
