@@ -27,3 +27,6 @@ const play = plays[perf.playID];
 - rename func format -> usd, a better name
 - move duplication money conversion divide by 100 to usb() func
 
+5. Rename var and func name
+- totalVolumeCreditsFor -> totalVolumeCredits
+- volumeCredits -> result

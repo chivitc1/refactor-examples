@@ -11,27 +11,27 @@ function statement(invoice, plays) {
     }
 
     result += `\n- Amount owed is ${usd(totalAmount)}`;
-    result += `\n- You earned ${totalVolumeCreditsFor()} credits\n`;
+    result += `\n- You earned ${totalVolumeCredits()} credits\n`;
     return result;
 
     function usd(aNumber) {
         return new Intl.NumberFormat("en-US",
         { style: "currency", currency: "USD", minimumFractionDigits: 2 }).format(aNumber/100);
     }
-    function totalVolumeCreditsFor() {
-        let volumeCredits = 0;
+    function totalVolumeCredits() {
+        let result = 0;
         for (let perf of invoice.performances) {
-            volumeCredits += volumeCreditsFor(perf);
+            result += volumeCreditsFor(perf);
         }
-        return volumeCredits;
+        return result;
     }
 
     function volumeCreditsFor(aPerformance) {
-        let volumeCredits =0;
-        volumeCredits += Math.max(aPerformance.audience - 30, 0);
+        let result =0;
+        result += Math.max(aPerformance.audience - 30, 0);
         if ("comedy" === playFor(aPerformance).type)
-            volumeCredits += Math.floor(aPerformance.audience / 10);
-        return volumeCredits
+            result += Math.floor(aPerformance.audience / 10);
+        return result
     }
 
     function playFor(aPerformance) {
