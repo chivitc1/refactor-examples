@@ -38,3 +38,6 @@ const play = plays[perf.playID];
 - rename temp var in calcTotalAmount -> result
 - rename func calcTotalAmount -> totalAmount()
 
+7. Split phase: extract render functionality from data calculation
+- extract func renderPlainText() from statement()
+
