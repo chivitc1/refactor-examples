@@ -43,3 +43,4 @@ const play = plays[perf.playID];
 - Split phase: passing intermediate data
 - Split phase: remove invoice param
 - split phase: move playFor func
+- split phase: move amountFor func
