@@ -7,16 +7,16 @@ function statement(invoice, plays) {
         result += `\n---- ${playFor(perf).name}: ${usd(amountFor(perf))} (${perf.audience})`;
     }
 
-    result += `\n- Amount owed is ${usd(calcTotalAmount())}`;
+    result += `\n- Amount owed is ${usd(totalAmount())}`;
     result += `\n- You earned ${totalVolumeCredits()} credits\n`;
     return result;
 
-    function calcTotalAmount() {
-        let totalAmount = 0;
+    function totalAmount() {
+        let result = 0;
         for (let perf of invoice.performances) {
-            totalAmount += amountFor(perf);
+            result += amountFor(perf);
         }
-        return totalAmount;
+        return result;
     }
 
     function usd(aNumber) {

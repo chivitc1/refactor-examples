@@ -35,4 +35,6 @@ const play = plays[perf.playID];
 - split loop, slide statement related to totalAmount calculation
 - extract func calcTotalAmount()
 - remove temp var totalAmount, using inline func calcTotalAmount()
+- rename temp var in calcTotalAmount -> result
+- rename func calcTotalAmount -> totalAmount()
 
