@@ -11,3 +11,4 @@ const play = plays[perf.playID];
 => replace temp var with query playFor(aPerformance)
 
 - rename param perf -> aPerformance
+- remove temp var, use inline func call playFor()
