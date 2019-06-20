@@ -30,3 +30,6 @@ const play = plays[perf.playID];
 5. Rename var and func name
 - totalVolumeCreditsFor -> totalVolumeCredits
 - volumeCredits -> result
+
+6. Removing totalAmount temp var
+- split loop, slide statement related to totalAmount calculation
