@@ -2,3 +2,10 @@
 - calculating the charge for one performance => extract function amountFor
 - rename thisAmount variable
 - rename perf param
+
+2. Look at func amountFor() usage: the play param is from a calculation from performance
+const play = plays[perf.playID];
+
+=> play is a temp var in a loop 
+=> play usage repeated a lot
+=> replace temp var with query playFor(aPerformance)
