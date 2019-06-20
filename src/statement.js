@@ -7,6 +7,23 @@ function statement(invoice, plays) {
         { style: "currency", currency: "USD", minimumFractionDigits: 2 }).format;
     for (let perf of invoice.performances) {
         const play = plays[perf.playID];
+        let thisAmount = amountFor(play, perf);
+
+        // add volume credits
+        volumeCredits += Math.max(perf.audience - 30, 0);
+        // add extra credit for every ten comedy attendees
+        if ("comedy" === play.type) volumeCredits += Math.floor(perf.audience / 10);
+
+        // print line for this order
+        result += `\n---- ${play.name}: ${format(thisAmount/100)} (${perf.audience})`;
+        totalAmount += thisAmount;
+    }
+
+    result += `\n- Amount owed is ${format(totalAmount/100)}`;
+    result += `\n- You earned ${volumeCredits} credits\n`;
+    return result;
+
+    function amountFor(play, perf) {
         let thisAmount = 0;
         switch (play.type) {
             case "tragedy":
@@ -25,20 +42,8 @@ function statement(invoice, plays) {
             default:
                 throw new Error(`unknown type: ${play.type}`);
         }
-
-        // add volume credits
-        volumeCredits += Math.max(perf.audience - 30, 0);
-        // add extra credit for every ten comedy attendees
-        if ("comedy" === play.type) volumeCredits += Math.floor(perf.audience / 10);
-
-        // print line for this order
-        result += `\n---- ${play.name}: ${format(thisAmount/100)} (${perf.audience})`;
-        totalAmount += thisAmount;
+        return thisAmount;
     }
-
-    result += `\n- Amount owed is ${format(totalAmount/100)}`;
-    result += `\n- You earned ${volumeCredits} credits\n`;
-    return result;
 }
 
 module.exports = statement;
