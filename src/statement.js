@@ -2,8 +2,7 @@
 function statement(invoice, plays) {
     let totalAmount = 0;
     let result = `Statement for ${invoice.customer}\n-------------------\n- You ordered:`;
-    const format = new Intl.NumberFormat("en-US",
-        { style: "currency", currency: "USD", minimumFractionDigits: 2 }).format;
+    
     for (let perf of invoice.performances) {
 
         // print line for this order
@@ -15,6 +14,10 @@ function statement(invoice, plays) {
     result += `\n- You earned ${totalVolumeCreditsFor()} credits\n`;
     return result;
 
+    function format(aNumber) {
+        return new Intl.NumberFormat("en-US",
+        { style: "currency", currency: "USD", minimumFractionDigits: 2 }).format(aNumber);
+    }
     function totalVolumeCreditsFor() {
         let volumeCredits = 0;
         for (let perf of invoice.performances) {

@@ -22,4 +22,6 @@ const play = plays[perf.playID];
 - extract func sum of volumeCredits: totalVolumeCreditsFor()
 - remove temp var volumeCredits, use inline func totalVolumeCreditsFor()
 
+4. Remove temp variable - format
+- extract func format creation to func format(aNumber)
 
