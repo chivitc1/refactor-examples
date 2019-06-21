@@ -66,3 +66,4 @@ THINKING:
 - move volumeCredits calc to class PerformanceCalculator
 - replace construct object with factory method
 - create subclasses of Calculator
+- move amount calc logic to subclasses
