@@ -64,3 +64,4 @@ THINKING:
 10. Replace conditional with polymor:
 - move amountFor() calc to class PerformanceCalculator
 - move volumeCredits calc to class PerformanceCalculator
+- replace construct object with factory method
