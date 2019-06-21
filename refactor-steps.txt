@@ -65,3 +65,4 @@ THINKING:
 - move amountFor() calc to class PerformanceCalculator
 - move volumeCredits calc to class PerformanceCalculator
 - replace construct object with factory method
+- create subclasses of Calculator
