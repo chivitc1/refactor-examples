@@ -67,3 +67,4 @@ THINKING:
 - replace construct object with factory method
 - create subclasses of Calculator
 - move amount calc logic to subclasses
+- move part of volumeCredits calc logic to subclasses - ComedyCalculator
