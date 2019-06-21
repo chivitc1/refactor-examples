@@ -1,3 +1,10 @@
+const TRAGEDY_INITIAL_AMOUNT = 40000;
+const COMEDY_INITIAL_AMOUNT = 30000;
+const AUDIENCE_NUM_GET_CREDITS = 30;
+const TRAGEDY_AUDIENCES_STANDARD = 30;
+const COMEDY_AUDIENCES_STANDARD = 20;
+const COMEDY_AUDIENCES_EARN_CREDIT = 10;
+
 function createStatementData(invoice, plays) {
     let statementData = {};
     statementData.customer = invoice.customer;
@@ -46,15 +53,15 @@ class PerformanceCalculator {
     }
 
     get volumeCredits() {
-        return Math.max(this.performance.audience - 30, 0)
+        return Math.max(this.performance.audience - AUDIENCE_NUM_GET_CREDITS, 0)
     }
 }
 
 class TragedyCalculator extends PerformanceCalculator {
     get amount() {
-        let result = 40000;
-        if (this.performance.audience > 30) {
-            result += 1000 * (this.performance.audience - 30);
+        let result = TRAGEDY_INITIAL_AMOUNT;
+        if (this.performance.audience > TRAGEDY_AUDIENCES_STANDARD) {
+            result += 1000 * (this.performance.audience - TRAGEDY_AUDIENCES_STANDARD);
         }
         return result;
     }
@@ -62,16 +69,16 @@ class TragedyCalculator extends PerformanceCalculator {
 
 class ComedyCalculator extends PerformanceCalculator {
     get amount() {
-        let result = 30000;
-        if (this.performance.audience > 20) {
-            result += 10000 + 500 * (this.performance.audience - 20);
+        let result = COMEDY_INITIAL_AMOUNT;
+        if (this.performance.audience > COMEDY_AUDIENCES_STANDARD) {
+            result += 10000 + 500 * (this.performance.audience - COMEDY_AUDIENCES_STANDARD);
         }
         result += 300 * this.performance.audience;
         return result;
     }
 
     get volumeCredits() {
-        return super.volumeCredits + Math.floor(this.performance.audience / 10);
+        return super.volumeCredits + Math.floor(this.performance.audience / COMEDY_AUDIENCES_EARN_CREDIT);
     }
 }
 
